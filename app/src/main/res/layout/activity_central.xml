@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".Central">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLE 스캔"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/btns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <Button
+            android:id="@+id/StartScanButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="스캔 하기"
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"/>
+
+        <Button
+            android:id="@+id/StopScanButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="스캔 끝내기"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp" />
+
+        <Button
+            android:id="@+id/disConnect"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="연결끊기"
+            android:enabled="false"
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"/>
+        
+        <Button
+            android:id="@+id/goBackHome"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="돌아가기"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/msgContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btns"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/ToPeripheralMsgView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:hint="전송할 메세지를 입력하세요."/>
+
+        <Button
+            android:id="@+id/ToPeripheralMsgBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전송" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/PeripheralTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:maxLines="100"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/msgContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
